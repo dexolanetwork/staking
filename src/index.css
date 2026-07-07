@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+  }
+}
+
+/* ── Preserved custom styles from globals.css ─────────────── */
+@keyframes border-glow {
+  0%   { border-color: rgba(99, 102, 241, 0.1); }
+  50%  { border-color: rgba(99, 102, 241, 0.5); }
+  100% { border-color: rgba(99, 102, 241, 0.1); }
+}
+
+.animate-border { position: relative; }
+
+.animate-border-inner {
+  position: absolute;
+  top: -2px; left: -2px; right: -2px; bottom: -2px;
+  border-radius: inherit;
+  animation: border-glow 2s infinite ease-in-out;
+  pointer-events: none;
+}
+
+.glowing-text {
+  font-size: 3rem;
+  color: white;
+  text-align: center;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px pink, 0 0 10px pink, 0 0 15px purple, 0 0 20px purple;
+}
+
+.glowing-text:hover {
+  color: pink;
+  text-shadow: 0 0 10px pink, 0 0 20px purple, 0 0 30px pink, 0 0 40px purple;
+  transform: scale(1.1);
+}
+
+#WEB3_CONNECT_MODAL_ID {
+  position: absolute;
+  z-index: 10;
+}
